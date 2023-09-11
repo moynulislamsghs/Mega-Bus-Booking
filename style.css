@@ -7,7 +7,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background:url("images/bus.png");
+    background:url("images/bus9.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
@@ -56,6 +56,13 @@ nav ul li a:hover, a.active{
     font-family: 'Bebas Neue', cursive;
     font-weight: 500;
 }
+.booking-content h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
 .booking-form{
     background-color: #fff;
     border: 1px solid #ddd;
@@ -102,11 +109,14 @@ nav ul li a:hover, a.active{
     min-width: 100px;
 }
 .plus-minus-btn{
-    color: #3352F2;
-    font-size: 30px;
+    font-size: 0px;
     padding: 2px;
-    margin: 10px 10px 0px 0px;
-    word-spacing: 20px;
+    margin: 18px 10px 0px 0px;
+    word-spacing: 12px;
+}
+.plus-minus-btn .fas {
+    color: #52AF3A;
+    font-size: 18px;
 }
 .btn-style{
     display: block;
@@ -115,10 +125,58 @@ nav ul li a:hover, a.active{
     border-radius: 5px;
     border: none;
     color: #fff;
-    font-weight: 500;
     background-color:  #52AF3A;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
 }
 .amount{
     display: flex;
     justify-content: space-between;
+}
+.popup{
+    width: 400px;
+    background: #000;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0px 10px 20px;
+    color: #fff;
+    visibility: hidden;
+    transition: transform 0.5s, top 0.5s;
+}
+.open-popup{
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+}
+.popup img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: -50px;
+}
+.popup h1 {
+    font-weight: 500;
+    font-size: 38px;
+    margin: 30px 0 10px;
+}
+.popup button{
+    width: 100%;
+    padding: 10px 0;
+    background-color: #52AF3A;
+    color: #fff;
+    border: 0;
+    margin: 30px 0 0;
+    font-size: 18px;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
