@@ -116,7 +116,7 @@
         <div class="popup" id="popupSection">
             <img src="images/404-tick.png" alt="">
             <h1>Thank You!</h1>
-            <p>Your booking has been successfully completed. Thanks!</p>
+            <p id="purchaseMessage">Your booking has been successfully completed. Thanks!</p>
             <button type="button" onclick="closePopup()">OK</button>
         </div>
     </main>
@@ -180,7 +180,7 @@
             var firstClassAmount = firstClassSeat * 150;
             var secondClassAmount = economyClassSeat * 100;
             var subtotal = firstClassAmount + secondClassAmount;
-            var vat = ((subtotal * 10)/100);
+            var vat = Math.round((subtotal * 10)/100);
             var total = subtotal + vat;
             document.getElementById("subtotalAmount").innerText = '$ ' + subtotal;
             document.getElementById("vatAmount").innerText = '$ ' + vat;
@@ -190,9 +190,21 @@
         let popup = document.getElementById("popupSection");
         function openPopup() {
             popup.classList.add("open-popup");
+            var firstClassPurchase = document.getElementById("firstClass").value;
+            var firstClassPurchaseInt = parseInt(firstClassPurchase);
+            var economyClassPurchase = document.getElementById("economyClass").value;
+            var economyClassPurchaseInt = parseInt(economyClassPurchase);
+            var totalPurchased = firstClassPurchaseInt + economyClassPurchaseInt;
+            var totalBilling = document.getElementById("totalAmount").innerText;
+            // alternative message. 
+            //document.getElementById("purchaseMessage").innerText = "You have successfully booked " + totalPurchased + " seat and the total bill is " + totalBilling + "." + "\nThank you!";
+            document.getElementById("purchaseMessage").innerText = "You have successfully booked " + firstClassPurchase + " first class seat and " + economyClassPurchase + " economy class seat.\n\nThe total bill is " + totalBilling + ".";
         }
         function closePopup(){
             popup.classList.remove("open-popup");
+            document.getElementById("firstClass").value = 0;
+            document.getElementById("economyClass").value = 0;
+            calculationsAndUpdateValue();
         }
     </script>
 
